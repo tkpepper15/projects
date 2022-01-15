@@ -9,8 +9,6 @@ def triangle_or_not(i):
 
     global p
     p=0
-    global a
-    a=0
 
     for i in range(n):
 
