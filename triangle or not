@@ -2,13 +2,16 @@
 import numpy as np
 
 #repeats the code n times.
+global n
+n=int(input("Number of trials: "))
+
 def triangle_or_not(i):
 
     global p
     p=0
+    global a
+    a=0
 
-    global n
-    n=100000
     for i in range(n):
 
 #randomly generates 3 unique real numbers that sum to 1 and assigns it to each side.
@@ -23,7 +26,7 @@ def triangle_or_not(i):
             x=x+1
         if a<b+c:
             x=x+1
-        if b<a+c: 
+        if b<a+c:
             x=x+1
 
 #if all three parts of the triangle inequality theorem are met, a 1 is added to the pass (p) variable.
@@ -33,4 +36,6 @@ def triangle_or_not(i):
 #passes (p) are divided by the total number (n) of trials to display a percentage.
 if __name__ == "__main__":
     triangle_or_not(0)
-print("{:.2%}".format(p/n))
+result=("{:.2%}".format(p/n))
+print(p,"were triangles and",n-p,"were not.")
+print("Experimental probability:",result)
