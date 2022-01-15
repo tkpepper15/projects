@@ -1,0 +1,27 @@
+#required in order to run this type of random generation.
+import numpy as np
+
+#repeats the code n times.
+n=100000
+for i in range(n):
+    
+    #randomly generates 3 unique real numbers that sum to 1 and assigns it to each side.
+    arr=np.random.dirichlet(np.ones(3),size=1)
+    a=(arr[0,0])
+    b=(arr[0,1])
+    c=(arr[0,2])
+    
+    #triangle inequality theorem to determine if the sides create a triangle.
+    x=0
+    if c<a+b:
+        x=x+1
+    if a<b+c:
+        x=x+1
+    if b<a+c: 
+        x=x+1
+    
+    #if all three parts of the triangle inequality theorem are met, a 1 is displayed, if not, a 0.
+    if x==3:
+        print(1)
+    else:
+        print(0)
