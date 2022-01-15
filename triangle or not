@@ -35,5 +35,6 @@ def triangle_or_not(i):
 if __name__ == "__main__":
     triangle_or_not(0)
 result=("{:.2%}".format(p/n))
+print(" ")
 print(p,"were triangles and",n-p,"were not.")
 print("Experimental probability:",result)
